@@ -108,10 +108,8 @@ impl PipeMaze {
                     if is_inside {
                         sum += 1;
                     }
-                    j += 1;
                 } else if self.map[i][j] == b'|' {
                     is_inside = !is_inside;
-                    j += 1;
                 } else if self.map[i][j] == b'L' {
                     j += 1;
                     while j < self.n && self.map[i][j] == b'-' {
@@ -120,7 +118,6 @@ impl PipeMaze {
                     if self.map[i][j] == b'7' {
                         is_inside = !is_inside;
                     }
-                    j += 1;
                 } else if self.map[i][j] == b'F' {
                     j += 1;
                     while j < self.n && self.map[i][j] == b'-' {
@@ -129,8 +126,8 @@ impl PipeMaze {
                     if self.map[i][j] == b'J' {
                         is_inside = !is_inside;
                     }
-                    j += 1;
                 }
+                j += 1;
             }
         }
         sum
