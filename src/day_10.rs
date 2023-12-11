@@ -28,7 +28,7 @@ fn offsets(b: u8) -> [Coord; 2] {
 fn find_start(map: &Vec<Vec<u8>>) -> Coord {
     for i in 0..map.len() {
         for j in 0..map[0].len() {
-            if map[i as usize][j as usize] == b'S' {
+            if map[i][j] == b'S' {
                 return Coord(i as i32, j as i32);
             }
         }
@@ -58,7 +58,7 @@ impl PipeMaze {
         let south = si < m - 1 && [b'|', b'L', b'J'].contains(&map[si + 1][sj]);
         let west = sj > 0 && [b'-', b'L', b'F'].contains(&map[si][sj - 1]);
         let east = sj < n - 1 && [b'-', b'J', b'7'].contains(&map[si][sj + 1]);
-        map[s.0 as usize][s.1 as usize] = match (north, south, west, east) {
+        map[si][sj] = match (north, south, west, east) {
             (true, true, false, false) => b'|',
             (false, false, true, true) => b'-',
             (true, false, false, true) => b'L',
