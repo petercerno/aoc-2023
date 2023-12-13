@@ -1,6 +1,6 @@
-mod day_12;
+mod day_13;
 
 fn main() {
-    day_12::part1("data/day_12_input.txt");
-    day_12::part2("data/day_12_input.txt");
+    day_13::part1("data/day_13_input.txt");
+    day_13::part2("data/day_13_input.txt");
 }
