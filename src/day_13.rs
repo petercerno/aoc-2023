@@ -61,10 +61,10 @@ impl Pattern {
             for j in 0..self.cols.len() {
                 self.flip(i, j);
                 let score = 100 * reflect(&self.rows, row) + reflect(&self.cols, col);
+                self.flip(i, j);
                 if score > 0 {
                     return score;
                 }
-                self.flip(i, j);
             }
         }
         panic!("Alternate score not found!");
